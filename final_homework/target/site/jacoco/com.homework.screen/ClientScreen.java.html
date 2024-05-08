@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ClientScreen.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">final_homework</a> &gt; <a href="index.source.html" class="el_package">com.homework.screen</a> &gt; <span class="el_source">ClientScreen.java</span></div><h1>ClientScreen.java</h1><pre class="source lang-java linenums">package com.homework.screen;
+
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.List;
+
+import com.homework.multiplayer.Client;
+import com.homework.world.Bullet;
+import com.homework.world.Item;
+
+import com.homework.world.Player;
+import com.homework.world.Wall;
+import com.homework.world.World;
+
+import asciiPanel.AsciiPanel;
+
+public class ClientScreen implements Screen {
+    //private static final int SCREEN_WIDTH = 82;
+    private static final int SCREEN_HEIGHT = 36;
+    private static final int WORLD_WIDTH = 82;
+    private static final int WORLD_HEIGHT = 34;
+    private World mainWorld;
+    private Client client;
+    private int index;
+<span class="nc" id="L25">    public static boolean client_is_on = true;</span>
+<span class="nc" id="L26">    public ClientScreen() {</span>
+<span class="nc" id="L27">        mainWorld  = new World(WORLD_WIDTH, WORLD_HEIGHT);</span>
+<span class="nc" id="L28">        client = new Client();</span>
+<span class="nc" id="L29">        index = client.get_port();</span>
+<span class="nc" id="L30">    }</span>
+
+    public void set_world(World world){
+<span class="nc" id="L33">        this.mainWorld = world;</span>
+<span class="nc" id="L34">        System.out.println(&quot;Set the World&quot;);</span>
+<span class="nc" id="L35">    }</span>
+
+    @Override
+    public void displayOutput(AsciiPanel terminal) throws IOException {
+<span class="nc" id="L39">        client.readByte();</span>
+<span class="nc" id="L40">        mainWorld = client.readMessage();</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        if(player_live_condition() == false){</span>
+<span class="nc" id="L42">            LoseScreen.displayOutput(terminal);</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">            if(client_is_on == true){</span>
+<span class="nc" id="L44">                client.sendMessage(&quot;m&quot;);</span>
+<span class="nc" id="L45">                client_is_on = false;</span>
+            }
+<span class="nc" id="L47">            return;</span>
+        }
+
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        if(mainWorld.server_is_on == false){</span>
+<span class="nc" id="L51">            LoseScreen.displayOutput(terminal);</span>
+<span class="nc" id="L52">            LoseScreen.server_is_down = true;</span>
+<span class="nc" id="L53">            return;</span>
+        }
+<span class="nc" id="L55">        List&lt;Player&gt;players = mainWorld.get_players();</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if(players.size() &lt;= 1)return;</span>
+<span class="nc" id="L57">        Player mainPlayer = players.get(0);</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        for(Player player : players)</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">            if(player.get_index() == index){</span>
+<span class="nc" id="L60">                mainPlayer = player;</span>
+<span class="nc" id="L61">                break;</span>
+            }
+<span class="nc bnc" id="L63" title="All 2 branches missed.">        for(Wall wall:mainWorld.get_walls()){</span>
+<span class="nc" id="L64">            terminal.write(wall.get_glyph(),wall.get_x(),wall.get_y(),wall.get_color());</span>
+<span class="nc" id="L65">        }</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">        for(Item item:mainWorld.get_items()){</span>
+<span class="nc" id="L67">            terminal.write(item.get_glyph(),item.get_x(),item.get_y(),item.get_color());</span>
+<span class="nc" id="L68">        }</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        for(Bullet bullet:mainWorld.get_bullets()){</span>
+<span class="nc" id="L70">            terminal.write(bullet.get_glyph(),bullet.get_x(),bullet.get_y(),bullet.get_color());</span>
+<span class="nc" id="L71">        }</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        for(Player player: players){</span>
+<span class="nc" id="L73">            terminal.write(player.get_glyph(),player.get_x(),player.get_y(),player.get_color());</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">            if(player.get_index() == index)mainPlayer = player;</span>
+<span class="nc" id="L75">        }</span>
+<span class="nc" id="L76">        String state = &quot;Health: &quot; + Integer.toString(mainPlayer.get_health()) + &quot; Attack: &quot;+ Integer.toString(mainPlayer.get_attack()) + &quot; Speed: &quot;+Integer.toString(mainPlayer.get_speed());</span>
+<span class="nc" id="L77">        terminal.write(state,0,SCREEN_HEIGHT - 1,AsciiPanel.brightWhite);</span>
+<span class="nc" id="L78">    }</span>
+
+    @Override
+    public Screen respondToUserInput(KeyEvent key) {
+<span class="nc" id="L82">        char ch = key.getKeyChar();</span>
+<span class="nc" id="L83">        client.sendMessage(String.valueOf(ch));</span>
+<span class="nc" id="L84">        return this;</span>
+    }
+
+    @Override
+    public boolean player_live_condition() {
+<span class="nc" id="L89">        List&lt;Player&gt;players = mainWorld.get_players();</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        for(Player player : players){</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">            if(player.get_index() == index)</span>
+<span class="nc" id="L92">                return true;</span>
+<span class="nc" id="L93">        }</span>
+<span class="nc" id="L94">        return false;</span>
+    }
+
+    @Override
+    public boolean monsters_live_condition() {
+<span class="nc" id="L99">        return false;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

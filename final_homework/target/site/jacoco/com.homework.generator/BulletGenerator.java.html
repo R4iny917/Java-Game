@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BulletGenerator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">final_homework</a> &gt; <a href="index.source.html" class="el_package">com.homework.generator</a> &gt; <span class="el_source">BulletGenerator.java</span></div><h1>BulletGenerator.java</h1><pre class="source lang-java linenums">package com.homework.generator;
+
+import java.util.List;
+
+import com.homework.screen.ServerScreen;
+import com.homework.world.Bullet;
+import com.homework.world.Esc;
+import com.homework.world.Player;
+
+public class BulletGenerator {
+    int width;
+    int height;
+    Player player;
+    List&lt;Bullet&gt;bullets;
+    
+<span class="fc" id="L16">    public BulletGenerator(int width, int height,Player player,List&lt;Bullet&gt;bullets){</span>
+<span class="fc" id="L17">        this.width = width;</span>
+<span class="fc" id="L18">        this.height = height;</span>
+<span class="fc" id="L19">        this.player = player;</span>
+<span class="fc" id="L20">        this.bullets = bullets;</span>
+<span class="fc" id="L21">    }</span>
+
+    public void create_bullets( ){
+<span class="fc" id="L24">        Thread thread = new Thread() {</span>
+            @Override
+            public void run() {
+                while(true){
+<span class="fc bfc" id="L28" title="All 4 branches covered.">                    if(Esc.get_world_status() == false &amp;&amp; player.is_alive()){  </span>
+                        Bullet bullet;
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">                        if(player.get_direction().equals(&quot;up&quot;))</span>
+<span class="nc" id="L31">                            bullet = new Bullet(player.get_x(), player.get_y() - 1, player.get_attack(),player.get_direction(), player, player.get_color(),player.get_world());</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">                        else if(player.get_direction().equals(&quot;down&quot;))</span>
+<span class="fc" id="L33">                            bullet = new Bullet(player.get_x(), player.get_y() + 1, player.get_attack(),player.get_direction(), player, player.get_color(),player.get_world());</span>
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">                        else if(player.get_direction().equals(&quot;left&quot;))</span>
+<span class="nc" id="L35">                            bullet = new Bullet(player.get_x() - 1, player.get_y(), player.get_attack(),player.get_direction(), player, player.get_color(),player.get_world());</span>
+                        else 
+<span class="fc" id="L37">                            bullet = new Bullet(player.get_x() + 1, player.get_y(), player.get_attack(),player.get_direction(), player,player.get_color(),player.get_world());</span>
+<span class="pc bpc" id="L38" title="4 of 8 branches missed.">                        if(bullet.get_x()&gt;= 1 &amp;&amp; bullet.get_x() &lt; width - 1 &amp;&amp; bullet.get_y() &gt;= 1 &amp;&amp; bullet.get_y() &lt; height - 1){</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">                            if(ServerScreen.multiplayer == true)</span>
+<span class="nc" id="L40">                                bullet.switch_attack_players_on();</span>
+<span class="fc" id="L41">                            bullets.add(bullet);</span>
+<span class="fc" id="L42">                            Thread bullet_thread = new Thread(bullet);</span>
+<span class="fc" id="L43">                            bullet_thread.start();</span>
+                        }
+                    }
+                    try {
+<span class="fc" id="L47">                        Thread.sleep(1000); // 暂停1秒</span>
+<span class="nc" id="L48">                    } catch (InterruptedException e) {</span>
+<span class="nc" id="L49">                        e.printStackTrace();</span>
+<span class="pc" id="L50">                    }</span>
+                }
+            }
+        };
+<span class="fc" id="L54">        thread.start();</span>
+<span class="fc" id="L55">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

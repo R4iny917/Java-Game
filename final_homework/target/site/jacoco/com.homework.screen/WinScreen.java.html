@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WinScreen.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">final_homework</a> &gt; <a href="index.source.html" class="el_package">com.homework.screen</a> &gt; <span class="el_source">WinScreen.java</span></div><h1>WinScreen.java</h1><pre class="source lang-java linenums">package com.homework.screen;
+import java.awt.event.KeyEvent;
+import asciiPanel.AsciiPanel;
+import java.awt.Color;
+<span class="nc" id="L5">public class WinScreen   {</span>
+
+    public static void displayOutput(AsciiPanel terminal){
+<span class="fc" id="L8">        Color color1 = new Color(255,215,0);</span>
+<span class="fc" id="L9">        Color color2 = AsciiPanel.brightWhite;</span>
+<span class="fc" id="L10">        String title1 = &quot; __     __  ___    ____   _____    ___    ____   __   __&quot;;</span>
+<span class="fc" id="L11">        String start_word =&quot;Congratulation!You have passed the game!&quot;;</span>
+<span class="fc" id="L12">        int start_length =  (terminal.getWidthInCharacters() - start_word.length())/2;</span>
+<span class="fc" id="L13">        int x_1 = (terminal.getWidthInCharacters() - title1.length())/2;</span>
+<span class="fc" id="L14">        int y_1 = terminal.getHeightInCharacters()/4 + 2;</span>
+<span class="fc" id="L15">        terminal.write(&quot; __     __  ___    ____   _____    ___    ____   __   __&quot;,x_1, y_1+0,color1);</span>
+<span class="fc" id="L16">        terminal.write(&quot; \\ \\   / / |_ _|  / ___| |_   _|  / _ \\  |  _ \\  \\ \\ / /&quot;,x_1, y_1+1,color1);</span>
+<span class="fc" id="L17">        terminal.write(&quot;  \\ \\ / /   | |  | |       | |   | | | | | |_) |  \\ V / &quot;,x_1,y_1+2,color1);</span>
+<span class="fc" id="L18">        terminal.write(&quot;   \\ V /    | |  | |___    | |   | |_| | |  _ &lt;    | |  &quot;, x_1, y_1+3,color1);</span>
+<span class="fc" id="L19">        terminal.write(&quot;    \\_/    |___|  \\____|   |_|    \\___/  |_| \\_\\   |_|  &quot;, x_1, y_1+4,color1);</span>
+<span class="fc" id="L20">        terminal.write(start_word, start_length, y_1+6,color2);</span>
+<span class="fc" id="L21">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
