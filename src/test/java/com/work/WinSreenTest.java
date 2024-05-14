@@ -1,9 +1,9 @@
-package com.homework;
-import com.homework.screen.WinScreen;
-
+package com.work;
 import asciiPanel.AsciiFont;
 import asciiPanel.AsciiPanel;
 import org.junit.jupiter.api.*;
+
+import com.work.screen.WinScreen;
 
 public class WinSreenTest {
 

@@ -1,9 +1,9 @@
-package com.homework;
-
-import com.homework.screen.*;
+package com.work;
 
 import asciiPanel.AsciiPanel;
 import org.junit.jupiter.api.Test;
+
+import com.work.screen.*;
 
 
 public class LoseScreenTest {

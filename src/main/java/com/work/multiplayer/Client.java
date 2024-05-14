@@ -1,4 +1,4 @@
-package com.homework.multiplayer;
+package com.work.multiplayer;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -7,8 +7,8 @@ import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
-import com.homework.screen.ClientScreen;
-import com.homework.world.World;
+import com.work.screen.ClientScreen;
+import com.work.world.World;
 
 /**
  * 

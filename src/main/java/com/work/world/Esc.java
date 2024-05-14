@@ -1,4 +1,4 @@
-package com.homework.world;
+package com.work.world;
 
 public class Esc {
     private static boolean stop = false; //false表示世界没有暂停

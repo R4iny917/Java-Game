@@ -1,10 +1,11 @@
-package com.homework;
+package com.work;
 
 import org.junit.jupiter.api.Test;
+
+import com.work.world.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
-import com.homework.world.*;
 
 import asciiPanel.AsciiPanel;
 

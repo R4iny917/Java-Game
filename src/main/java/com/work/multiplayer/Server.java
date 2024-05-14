@@ -1,4 +1,4 @@
-package com.homework.multiplayer;
+package com.work.multiplayer;
 
 import java.awt.Component;
 import java.awt.event.KeyEvent;
@@ -16,8 +16,9 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
-import com.homework.world.*;
-import com.homework.screen.*;;
+
+import com.work.screen.*;
+import com.work.world.*;;
 /**
  * 
  * This is a simple NIO based server.

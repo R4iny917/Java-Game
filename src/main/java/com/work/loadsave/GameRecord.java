@@ -1,4 +1,4 @@
-package com.homework.loadsave;
+package com.work.loadsave;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.io.ObjectOutputStream;
 
 import javax.swing.JFileChooser;
 
-import com.homework.world.World;
+import com.work.world.World;
 
 public class GameRecord {
     private static boolean is_recording_game = false;

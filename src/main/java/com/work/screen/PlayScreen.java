@@ -1,12 +1,13 @@
-package com.homework.screen;
-import com.homework.generator.*;
-import com.homework.loadsave.GameLoad;
-import com.homework.loadsave.GameRecord;
-import com.homework.loadsave.GameSave;
-import com.homework.world.*;
-
+package com.work.screen;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+
+import com.work.generator.*;
+import com.work.loadsave.GameLoad;
+import com.work.loadsave.GameRecord;
+import com.work.loadsave.GameSave;
+import com.work.world.*;
+
 import java.awt.Color;
 
 import asciiPanel.*;

@@ -1,4 +1,4 @@
-package com.homework;
+package com.work;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -7,9 +7,9 @@ import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
 
-import com.homework.loadsave.*;
-import com.homework.world.Esc;
-import com.homework.world.World;
+import com.work.loadsave.*;
+import com.work.world.Esc;
+import com.work.world.World;
 
 
 public class RecordTest {

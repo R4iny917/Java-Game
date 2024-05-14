@@ -1,16 +1,15 @@
-package com.homework.screen;
+package com.work.screen;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.List;
 
-import com.homework.multiplayer.Client;
-import com.homework.world.Bullet;
-import com.homework.world.Item;
-
-import com.homework.world.Player;
-import com.homework.world.Wall;
-import com.homework.world.World;
+import com.work.multiplayer.Client;
+import com.work.world.Bullet;
+import com.work.world.Item;
+import com.work.world.Player;
+import com.work.world.Wall;
+import com.work.world.World;
 
 import asciiPanel.AsciiPanel;
 

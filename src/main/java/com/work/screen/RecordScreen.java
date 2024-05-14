@@ -1,4 +1,4 @@
-package com.homework.screen;
+package com.work.screen;
 
 import java.awt.event.KeyEvent;
 import java.io.EOFException;
@@ -12,8 +12,8 @@ import java.util.List;
 
 import javax.swing.JFileChooser;
 
-import com.homework.loadsave.PlayRecord;
-import com.homework.world.World;
+import com.work.loadsave.PlayRecord;
+import com.work.world.World;
 
 import asciiPanel.AsciiPanel;
 

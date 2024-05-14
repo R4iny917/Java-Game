@@ -1,4 +1,4 @@
-package com.homework.screen;
+package com.work.screen;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
@@ -7,10 +7,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import com.homework.generator.BulletGenerator;
-import com.homework.generator.ItemGenerator;
-import com.homework.multiplayer.Server;
-import com.homework.world.*;
+import com.work.generator.BulletGenerator;
+import com.work.generator.ItemGenerator;
+import com.work.multiplayer.Server;
+import com.work.world.*;
 
 import asciiPanel.AsciiPanel;
 

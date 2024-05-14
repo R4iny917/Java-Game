@@ -1,13 +1,15 @@
-package com.homework;
+package com.work;
 
 import org.junit.jupiter.api.Test;
+
+import com.work.world.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import com.homework.world.*;
+
 import java.awt.Color;
 import java.util.List;
-import java.util.ArrayList;
-import com.homework.world.Item;;
+import java.util.ArrayList;;
 class PlayerTest {
 
     @Test

@@ -1,4 +1,4 @@
-package com.homework.world;
+package com.work.world;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.homework;
+package com.work;
 
 import java.awt.Component;
 import java.awt.event.KeyEvent;
@@ -7,8 +7,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import com.homework.multiplayer.Server;
-import com.homework.screen.ServerScreen;
+
+import com.work.multiplayer.Server;
+import com.work.screen.ServerScreen;
 
 import asciiPanel.AsciiFont;
 import asciiPanel.AsciiPanel;

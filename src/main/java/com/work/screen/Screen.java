@@ -1,4 +1,4 @@
-package com.homework.screen;
+package com.work.screen;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;

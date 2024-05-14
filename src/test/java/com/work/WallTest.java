@@ -1,8 +1,8 @@
-package com.homework;
+package com.work;
 
 import org.junit.jupiter.api.Test;
 
-import com.homework.world.Wall;
+import com.work.world.Wall;
 
 import static org.junit.jupiter.api.Assertions.*;
 

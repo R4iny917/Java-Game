@@ -1,12 +1,11 @@
-package com.homework.loadsave;
+package com.work.loadsave;
 
 
-import com.homework.world.Bullet;
-import com.homework.world.Item;
-import com.homework.world.Monster;
-import com.homework.world.Wall;
-import com.homework.world.World;
-
+import com.work.world.Bullet;
+import com.work.world.Item;
+import com.work.world.Monster;
+import com.work.world.Wall;
+import com.work.world.World;
 
 import asciiPanel.AsciiPanel;
 

@@ -1,5 +1,8 @@
-package com.homework;
+package com.work;
 import org.junit.jupiter.api.Test;
+
+import com.work.world.Creature;
+import com.work.world.World;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -8,8 +11,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.awt.Color;
-import com.homework.world.Creature;
-import com.homework.world.World;
 public class CreatureTest {
 
     @Test

@@ -1,4 +1,4 @@
-package com.homework;
+package com.work;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,11 +6,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.awt.Component;
 
-import com.homework.loadsave.GameRecord;
-import com.homework.screen.PlayScreen;
-import com.homework.world.*;
+import com.work.loadsave.GameRecord;
+import com.work.screen.PlayScreen;
+import com.work.world.*;
+
+import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 

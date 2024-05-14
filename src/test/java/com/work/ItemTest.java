@@ -1,4 +1,4 @@
-package com.homework;
+package com.work;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,7 +7,7 @@ import java.awt.Color;
 
 import org.junit.jupiter.api.Test;
 
-import com.homework.world.Item;
+import com.work.world.Item;
 
 public class ItemTest {
     

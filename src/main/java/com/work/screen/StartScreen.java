@@ -1,11 +1,11 @@
-package com.homework.screen;
+package com.work.screen;
 import java.awt.Color;
 import asciiPanel.AsciiPanel;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-import com.homework.loadsave.PlayRecord;
-import com.homework.world.MapPath;
+import com.work.loadsave.PlayRecord;
+import com.work.world.MapPath;
 
 /**
  *

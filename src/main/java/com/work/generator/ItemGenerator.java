@@ -1,13 +1,12 @@
-package com.homework.generator;
+package com.work.generator;
 
 import java.util.List;
 import java.util.Random;
 
-import com.homework.screen.PlayScreen;
-
-import com.homework.world.Esc;
-import com.homework.world.Item;
-import com.homework.world.Player;
+import com.work.screen.PlayScreen;
+import com.work.world.Esc;
+import com.work.world.Item;
+import com.work.world.Player;
 
 public class ItemGenerator {
     int width;

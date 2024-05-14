@@ -1,8 +1,9 @@
-package com.homework;
+package com.work;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import com.homework.world.*;
+
+import com.work.world.*;
 
 import asciiPanel.AsciiPanel;
 

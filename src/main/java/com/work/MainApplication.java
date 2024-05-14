@@ -1,14 +1,15 @@
-package com.homework;
+package com.work;
 
 import java.awt.event.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
+
+import com.work.loadsave.PlayRecord;
+import com.work.screen.*;
+
 import asciiPanel.AsciiFont;
 import asciiPanel.AsciiPanel;
-
-import com.homework.loadsave.PlayRecord;
-import com.homework.screen.*;
 
 public class MainApplication extends JFrame implements KeyListener
 {   private AsciiPanel terminal;
@@ -17,7 +18,7 @@ public class MainApplication extends JFrame implements KeyListener
     public MainApplication(){
         super();
         terminal = new AsciiPanel(82, 36, AsciiFont.CP437_9x16);
-        ImageIcon icon = new ImageIcon("D:/Advanced JAVA Programming/j05-R4iny917/final_homework/src/main/java/com/homework/resources/Icon.jpg");
+        ImageIcon icon = new ImageIcon("D:/Advanced JAVA Programming/java/src/main/java/com/work/resources/Icon.jpg");
         this.setIconImage(icon.getImage());
         add(terminal);
         pack();

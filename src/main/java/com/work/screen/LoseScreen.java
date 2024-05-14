@@ -1,4 +1,4 @@
-package com.homework.screen;
+package com.work.screen;
 
 import asciiPanel.AsciiPanel;
 

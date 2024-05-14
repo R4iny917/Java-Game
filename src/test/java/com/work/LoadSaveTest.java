@@ -1,4 +1,4 @@
-package com.homework;
+package com.work;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,9 +7,9 @@ import java.io.File;
 
 import org.junit.jupiter.api.Test;
 
-import com.homework.loadsave.GameLoad;
-import com.homework.loadsave.GameSave;
-import com.homework.world.World;
+import com.work.loadsave.GameLoad;
+import com.work.loadsave.GameSave;
+import com.work.world.World;
 
 public class LoadSaveTest {
     @Test

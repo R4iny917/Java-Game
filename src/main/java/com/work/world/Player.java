@@ -1,4 +1,4 @@
-package com.homework.world;
+package com.work.world;
 import java.awt.*;
 import java.io.Serializable;
 

@@ -1,12 +1,13 @@
-package com.homework;
-import com.homework.screen.PlayScreen;
-import com.homework.screen.Screen;
-import com.homework.screen.StartScreen;
-
+package com.work;
 import asciiPanel.AsciiFont;
 import asciiPanel.AsciiPanel;
 import java.awt.Component;
 import org.junit.jupiter.api.*;
+
+import com.work.screen.PlayScreen;
+import com.work.screen.Screen;
+import com.work.screen.StartScreen;
+
 import static org.junit.jupiter.api.Assertions.*;
 import java.awt.event.KeyEvent;
 public class StartScreenTest {

@@ -1,11 +1,11 @@
-package com.homework.generator;
+package com.work.generator;
 
 import java.util.List;
 
-import com.homework.screen.ServerScreen;
-import com.homework.world.Bullet;
-import com.homework.world.Esc;
-import com.homework.world.Player;
+import com.work.screen.ServerScreen;
+import com.work.world.Bullet;
+import com.work.world.Esc;
+import com.work.world.Player;
 
 public class BulletGenerator {
     int width;

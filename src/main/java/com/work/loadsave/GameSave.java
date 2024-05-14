@@ -1,4 +1,4 @@
-package com.homework.loadsave;
+package com.work.loadsave;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 
 import javax.swing.JFileChooser;
 
-import com.homework.world.World;
+import com.work.world.World;
 
 public class GameSave {
     public static boolean is_under_test = false;
